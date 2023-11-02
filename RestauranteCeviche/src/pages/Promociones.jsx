@@ -4,6 +4,7 @@ export default function PromocionesFunction() {
   return (
     <>
       <HeaderFunction/>
+      <a></a>
     </>
   );
 }
