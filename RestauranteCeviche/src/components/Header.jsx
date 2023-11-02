@@ -10,24 +10,36 @@ export function HeaderFunction() {
         <img src={logo} alt="logo" className="h-40 w-40" />
       </div>
       <div className="grid grid-cols-2 h-auto justify-center items-center w-full gap-10 p-10 md:flex md:flex-row md:w-1/2">
-        <button className="bg-black p-4 rounded-lg text-white hover:text-green-500">
-          Inicio
-        </button>
         <NavLink
-          to="/Nosotros"
+          to="/"
+          className="bg-black p-4 rounded-lg text-white hover:text-green-500"
+        >
+          Inicio
+        </NavLink>
+        <NavLink
+          to="/Promociones"
           className="bg-black p-4 rounded-lg text-white hover:text-green-500"
         >
           Promociones
         </NavLink>
-        <button className="bg-black p-4 rounded-lg text-white hover:text-green-500">
+        <NavLink
+          to="/Carta"
+          className="bg-black p-4 rounded-lg text-white hover:text-green-500"
+        >
           Carta
-        </button>
-        <button className="bg-black p-4 rounded-lg text-white hover:text-green-500">
+        </NavLink>
+        <NavLink
+          to="/Reparto"
+          className="bg-black p-4 rounded-lg text-white hover:text-green-500"
+        >
           Reparto
-        </button>
-        <button className="bg-black p-4 rounded-lg text-white hover:text-green-500">
+        </NavLink>
+        <NavLink
+          to="/Contacto"
+          className="bg-black p-4 rounded-lg text-white hover:text-green-500"
+        >
           Contacto
-        </button>
+        </NavLink>
       </div>
       <div className="flex justify-center items-center h-auto w-full md:w-1/4 gap-12">
         <button className="bg-orange-500 p-4 rounded-lg flex flex-row gap-2 items-center justify-center">

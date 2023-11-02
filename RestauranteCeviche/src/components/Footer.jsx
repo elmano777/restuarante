@@ -4,10 +4,15 @@ import { GrSchedules } from "react-icons/gr";
 import { AiFillFacebook } from "react-icons/ai";
 import { AiOutlineMail } from "react-icons/ai";
 import { AiFillCopyrightCircle } from "react-icons/ai";
+import { FaCcVisa } from "react-icons/fa";
+import { FaCcMastercard } from "react-icons/fa";
+import { SiAmericanexpress } from "react-icons/si";
+import { FaCcDiscover } from "react-icons/fa";
+import logo from "../assets/rex-removebg-preview.png";
 
 export default function FooterFunction() {
   return (
-    <div className="w-full h-auto bg-red-700 text-white">
+    <footer className="w-full h-auto bg-red-700 text-white">
       <div className="flex flex-row w-full h-auto">
         <div className="flex flex-col w-1/4 h-auto m-12">
           <div className="flex flex-grow items-center gap-2">
@@ -26,53 +31,52 @@ export default function FooterFunction() {
             <ImParagraphLeft />
             <p>Ignacio Merino 2331</p>
           </div>
+          <div className="flex flex-grow items-center gap-2">
+            <ImParagraphLeft />
+            <p>Lince, Lima - altura de Canevaro cuadra 9</p>
+          </div>
         </div>
-        <div className="flex flex-col w-1/4 h-auto m-12">
+        <div className="flex flex-col w-1/4 h-20 m-12">
           <div className="flex flex-grow items-center gap-2">
             <GrSchedules />
-            <p>Dirección</p>
+            <p>Horarios</p>
           </div>
           <div className="flex flex-grow items-center gap-2">
             <ImParagraphLeft />
-            <p>Brigadier Pumacahua 2321</p>
+            <p>De Lunes a Domingo de 11:00 am a 8:00 pm</p>
           </div>
         </div>
         <div className="flex flex-col w-1/4 h-auto m-12">
           <div className="flex flex-grow items-center gap-2">
             <BiDirections />
-            <p>Dirección</p>
+            <p>Contacto</p>
           </div>
           <div className="flex flex-grow items-center gap-2">
             <ImParagraphLeft />
-            <p>Brigadier Pumacahua 2321</p>
+            <p>(01) 266 - 0426</p>
           </div>
           <div className="flex flex-grow items-center gap-2">
             <ImParagraphLeft />
-            <p>Brigadier Pumacahua 2318</p>
+            <p>reservaciones@cevicheriarichards.com</p>
           </div>
           <div className="flex flex-grow items-center gap-2">
             <ImParagraphLeft />
-            <p>Ignacio Merino 2331</p>
+            <p>Política de privacidad</p>
+          </div>
+          <div className="flex flex-grow items-center gap-2">
+            <ImParagraphLeft />
+            <p>Libro de Reclamaciones</p>
           </div>
         </div>
-        <div className="flex flex-col w-1/4 h-auto m-12">
-          <div className="flex flex-grow items-center gap-2">
-            <BiDirections />
-            <p>Dirección</p>
+        <address className="flex flex-col w-1/4 h-auto m-12">
+          <img src={logo} alt="logo" className="w-auto h-52" />
+          <div className="flex flex-row h-auto">
+              <FaCcVisa className="w-1/4 h-8"/>
+              <FaCcMastercard className="w-1/4 h-8"/>
+              <SiAmericanexpress className="w-1/4 h-8"/>
+              <FaCcDiscover className="w-1/4 h-8"/>
           </div>
-          <div className="flex flex-grow items-center gap-2">
-            <ImParagraphLeft />
-            <p>Brigadier Pumacahua 2321</p>
-          </div>
-          <div className="flex flex-grow items-center gap-2">
-            <ImParagraphLeft />
-            <p>Brigadier Pumacahua 2318</p>
-          </div>
-          <div className="flex flex-grow items-center gap-2">
-            <ImParagraphLeft />
-            <p>Ignacio Merino 2331</p>
-          </div>
-        </div>
+        </address>
       </div>
       <div className="flex flex-col items-center justify-center w-full h-auto gap-4">
         <div className="flex flex-row">
@@ -84,6 +88,6 @@ export default function FooterFunction() {
           Richards | Desarrollado por Enfocus Soluciones
         </p>
       </div>
-    </div>
+    </footer>
   );
 }
