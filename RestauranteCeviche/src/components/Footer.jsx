@@ -13,7 +13,7 @@ import logo from "../assets/rex-removebg-preview.png";
 export default function FooterFunction() {
   return (
     <footer className="w-full h-auto bg-red-700 text-white">
-      <div className="flex flex-row w-full h-auto">
+      <div className="flex flex-col md:flex-row w-full h-auto">
         <div className="flex flex-col w-1/4 h-auto m-12">
           <div className="flex flex-grow items-center gap-2">
             <BiDirections />
@@ -69,12 +69,14 @@ export default function FooterFunction() {
           </div>
         </div>
         <address className="flex flex-col w-1/4 h-auto m-12">
-          <img src={logo} alt="logo" className="w-auto h-52" />
+          <div className="bg-white h-auto w-auto my-4 rounded-full">
+            <img src={logo} alt="logo" className="w-auto h-52" />
+          </div>
           <div className="flex flex-row h-auto">
-              <FaCcVisa className="w-1/4 h-8"/>
-              <FaCcMastercard className="w-1/4 h-8"/>
-              <SiAmericanexpress className="w-1/4 h-8"/>
-              <FaCcDiscover className="w-1/4 h-8"/>
+            <FaCcVisa className="w-1/4 h-8" />
+            <FaCcMastercard className="w-1/4 h-8" />
+            <SiAmericanexpress className="w-1/4 h-8" />
+            <FaCcDiscover className="w-1/4 h-8" />
           </div>
         </address>
       </div>
