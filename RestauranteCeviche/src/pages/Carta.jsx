@@ -17,12 +17,22 @@ import cartalogo12 from "../assets/CartaLogos/CartaLogo12.jpg"
 import cartalogo13 from "../assets/CartaLogos/CartaLogo13.jpg"
 import cartalogo14 from "../assets/CartaLogos/CartaLogo14.png"
 import cartalogo15 from "../assets/CartaLogos/CartaLogo15.jpg"
+import { useState } from 'react'
 
 export default function CartaFunction() {
+  const [allProducts, setAllProducts] = useState([]);
+  const [total, setTotal] = useState(0);
+  const [countProducts, setCountProducts] = useState(0);
   return (
     <>
-      <HeaderFunction />
-      <TituloFunction titulo2={"Carta"}/>
+      <HeaderFunction
+        allProducts={allProducts}
+        setAllProducts={setAllProducts}
+        total={total}
+        setTotal={setTotal}
+        countProducts={countProducts}
+        setCountProducts={setCountProducts} />
+      <TituloFunction titulo2={"Carta"} />
       <div className="grid grid-cols-3">
         <CartaCardFunction imagen={cartalogo1} descripcion={"Entradas"} />
         <CartaCardFunction imagen={cartalogo2} descripcion={"Ceviches"} />
@@ -32,7 +42,6 @@ export default function CartaFunction() {
         <CartaCardFunction imagen={cartalogo6} descripcion={"Tacu Tacus"} />
         <CartaCardFunction imagen={cartalogo7} descripcion={"Aguadito"} />
         <CartaCardFunction imagen={cartalogo8} descripcion={"Jaleas"} />
-        <CartaCardFunction imagen={cartalogo9} descripcion={"Platos Extras"} />
         <CartaCardFunction imagen={cartalogo10} descripcion={"Pescado Frito"} />
         <CartaCardFunction imagen={cartalogo11} descripcion={"Platos Criollos"} />
         <CartaCardFunction imagen={cartalogo12} descripcion={"Pastas"} />

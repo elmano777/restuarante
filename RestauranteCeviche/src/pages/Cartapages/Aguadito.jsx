@@ -1,56 +1,32 @@
 import { HeaderFunction } from "../../components/Header";
 import FooterFunction from "../../components/Footer"
 import TituloFunction from "../../components/Titulo"
-import PromocionesCards from "../../components/Promociones";
-import aguadito1 from "../../assets/Aguaditos/aguadito1.jpg"
-import aguadito2 from "../../assets/Aguaditos/aguadito2.jpg"
-import aguadito3 from "../../assets/Aguaditos/aguadito3.jpg"
-import aguadito4 from "../../assets/Aguaditos/aguadito4.jpg"
-import aguadito5 from "../../assets/Aguaditos/aguadito5.jpg"
+import { PlatosFunction } from "../../components/PlatosCards"
+import { useState } from 'react'
 
 export default function AguaditoFunction() {
+    const [allProducts, setAllProducts] = useState([]);
+    const [total, setTotal] = useState(0);
+    const [countProducts, setCountProducts] = useState(0);
     return (
         <>
-            <HeaderFunction />
-            <TituloFunction titulo2={"Entradas"} />
-            <div className="flex flex-col mx-4 md:grid md:grid-cols-3 md:gap-4 h-auto text-center">
-                <PromocionesCards
-                    amount={120}
-                    image={aguadito1}
-                />
-                <PromocionesCards
-                    amount={120}
-                    image={aguadito2}
-                    titulo={"Pack Familiar 4 personas"}
-                    descripcion={
-                        "ceviche de pescado + arroz con mariscos + jalea mixta + jarra de chicha."
-                    }
-                />
-                <PromocionesCards
-                    amount={120}
-                    image={aguadito3}
-                    titulo={"Pack Familiar 4 personas"}
-                    descripcion={
-                        "ceviche de pescado + arroz con mariscos + jalea mixta + jarra de chicha."
-                    }
-                />
-                <PromocionesCards
-                    amount={120}
-                    image={aguadito4}
-                    titulo={"Pack Familiar 4 personas"}
-                    descripcion={
-                        "ceviche de pescado + arroz con mariscos + jalea mixta + jarra de chicha."
-                    }
-                />
-                <PromocionesCards
-                    amount={120}
-                    image={aguadito5}
-                    titulo={"Pack Familiar 4 personas"}
-                    descripcion={
-                        "ceviche de pescado + arroz con mariscos + jalea mixta + jarra de chicha."
-                    }
-                />
-            </div>
+            <HeaderFunction
+                allProducts={allProducts}
+                setAllProducts={setAllProducts}
+                total={total}
+                setTotal={setTotal}
+                countProducts={countProducts}
+                setCountProducts={setCountProducts} />
+            <TituloFunction titulo2={"Aguaditos"} />
+            <PlatosFunction
+                allProducts={allProducts}
+                setAllProducts={setAllProducts}
+                total={total}
+                setTotal={setTotal}
+                countProducts={countProducts}
+                setCountProducts={setCountProducts}
+                productIds={[9, 10, 11, 12, 13]}
+            />
             <FooterFunction />
         </>
     )

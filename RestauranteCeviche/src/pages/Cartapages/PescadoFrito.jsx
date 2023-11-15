@@ -1,34 +1,33 @@
 import { HeaderFunction } from "../../components/Header";
 import FooterFunction from "../../components/Footer"
 import TituloFunction from "../../components/Titulo"
-import PromocionesCards from "../../components/Promociones";
-import PescadoFrito1 from "../../assets/PescadoFrito/pescadofrito1.jpg"
-import PescadoFrito2 from "../../assets/PescadoFrito/pescadofrito2.jpg"
+import { PlatosFunction } from "../../components/PlatosCards"
+import { useState } from 'react'
 
 export default function ArrocesFunction() {
+    const [allProducts, setAllProducts] = useState([]);
+    const [total, setTotal] = useState(0);
+    const [countProducts, setCountProducts] = useState(0);
     return (
         <>
-            <HeaderFunction />
-            <TituloFunction titulo2={"Entradas"}/>
-            <div className="flex flex-col mx-4 md:grid md:grid-cols-3 md:gap-4 h-auto text-center">
-                <PromocionesCards
-                    amount={120}
-                    image={PescadoFrito1}
-                    titulo={"Pack Familiar 4 personas"}
-                    descripcion={
-                        "ceviche de pescado + arroz con mariscos + jalea mixta + jarra de chicha."
-                    }
-                />
-                <PromocionesCards
-                    amount={120}
-                    image={PescadoFrito2}
-                    titulo={"Pack Familiar 4 personas"}
-                    descripcion={
-                        "ceviche de pescado + arroz con mariscos + jalea mixta + jarra de chicha."
-                    }
-                />
-            </div>
-            <FooterFunction/>
+            <HeaderFunction
+                allProducts={allProducts}
+                setAllProducts={setAllProducts}
+                total={total}
+                setTotal={setTotal}
+                countProducts={countProducts}
+                setCountProducts={setCountProducts} />
+            <TituloFunction titulo2={"Pescados Fritos"} />
+            <PlatosFunction
+                allProducts={allProducts}
+                setAllProducts={setAllProducts}
+                total={total}
+                setTotal={setTotal}
+                countProducts={countProducts}
+                setCountProducts={setCountProducts}
+                productIds={[68, 69]}
+            />
+            <FooterFunction />
         </>
     )
 }

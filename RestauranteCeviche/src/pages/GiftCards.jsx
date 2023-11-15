@@ -1,19 +1,32 @@
 import { HeaderFunction } from "../components/Header";
-import GiftCard from "../components/GiftCard";
-import logo from "../assets/rex-removebg-preview.png";
 import FooterFunction from "../components/Footer";
 import TituloFunction from "../components/Titulo"
+import { GiftFunction } from '../components/GiftCards'
+import { useState } from 'react'
 
 export default function GiftCardsFunction() {
+  const [allProducts, setAllProducts] = useState([]);
+  const [total, setTotal] = useState(0);
+  const [countProducts, setCountProducts] = useState(0);
   return (
     <>
-      <HeaderFunction />
-      <TituloFunction titulo2={"GiftCards"}/>
-      <div className="flex flex-col mx-4 md:flex md:flex-row h-auto">
-        <GiftCard amount={50} image={logo} />
-        <GiftCard amount={100} image={logo} />
-        <GiftCard amount={150} image={logo} />
-      </div>
+      <HeaderFunction
+        allProducts={allProducts}
+        setAllProducts={setAllProducts}
+        total={total}
+        setTotal={setTotal}
+        countProducts={countProducts}
+        setCountProducts={setCountProducts} />
+      <TituloFunction titulo2={"GiftCards"} />
+      <GiftFunction
+        allProducts={allProducts}
+        setAllProducts={setAllProducts}
+        total={total}
+        setTotal={setTotal}
+        countProducts={countProducts}
+        setCountProducts={setCountProducts}
+        productIds={[1, 2, 3]}
+      />
       <FooterFunction />
     </>
   );

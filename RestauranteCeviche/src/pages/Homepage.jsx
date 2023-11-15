@@ -5,11 +5,21 @@ import { AiFillPhone } from "react-icons/ai";
 import { AiFillClockCircle } from "react-icons/ai";
 import { BiSolidDirectionLeft } from "react-icons/bi";
 import Place from "../assets/lugar-transformed.jpg";
+import { useState } from 'react'
 
 export function HomePageFunction() {
+  const [allProducts, setAllProducts] = useState([]);
+  const [total, setTotal] = useState(0);
+  const [countProducts, setCountProducts] = useState(0);
   return (
     <>
-      <HeaderFunction />
+      <HeaderFunction
+        allProducts={allProducts}
+        setAllProducts={setAllProducts}
+        total={total}
+        setTotal={setTotal}
+        countProducts={countProducts}
+        setCountProducts={setCountProducts} />
       <img src={Place} alt="Place" className="w-full h-72 md:h-96" />
       <div
         className="flex flex-col items-center justify-center w-full bg-red-700 h-28 

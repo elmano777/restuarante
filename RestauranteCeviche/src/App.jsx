@@ -15,35 +15,36 @@ import TiraditosFunction from './pages/Cartapages/Tiraditos'
 import PastasFunction from './pages/Cartapages/Pastas'
 import PescadoFritoFunction from './pages/Cartapages/PescadoFrito'
 import PlatosCriollosFunction from './pages/Cartapages/PlatosCriollos'
-import PlatosExtrasFunction from './pages/Cartapages/PlatosExtras'
 import TacuTacusFunction from './pages/Cartapages/TacuTacus'
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { CarritoProvider } from "./Context/CarritoContext"
 
 function App() {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<HomePageFunction />} />
-        <Route path="/GiftCards" element={<GiftCardsFunction />} />
-        <Route path="/Promociones" element={<PromocionesFunction />} />
-        <Route path="/Carta" element={<CartaFunction />}/>
-        <Route path="/Entradas" element={<EntradasFunction/>} />
-        <Route path="/Ceviches" element={<CevichesFunction/>} />
-        <Route path="/Lenguado" element={<LenguadoFunction/>} />
-        <Route path="/Tiraditos" element={<TiraditosFunction/>} />
-        <Route path="/Arrocess" element={<ArrocesFunction/>} />
-        <Route path="/Tacu Tacus" element={<TacuTacusFunction/>} />
-        <Route path="/Aguadito" element={<AguaditoFunction/>} />
-        <Route path="/Jaleas" element={<JaleasFunction/>} />
-        <Route path="/Platos Extras" element={<PlatosExtrasFunction/>} />
-        <Route path="/Pescado Frito" element={<PescadoFritoFunction/>} />
-        <Route path="/Platos Criollos" element={<PlatosCriollosFunction/>} />
-        <Route path="/Pastas" element={<PastasFunction/>} />
-        <Route path="/Chita" element={<ChitaFunction/>} />
-        <Route path="/Bebidas" element={<BebidasFunction/>} />
-        <Route path="/Reparto" element={<RepartoFunction />} />
-      </Routes>
-    </BrowserRouter>
+    <CarritoProvider>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<HomePageFunction />} />
+          <Route path="/GiftCards" element={<GiftCardsFunction />} />
+          <Route path="/Promociones" element={<PromocionesFunction />} />
+          <Route path="/Carta" element={<CartaFunction />} />
+          <Route path="/Entradas" element={<EntradasFunction />} />
+          <Route path="/Ceviches" element={<CevichesFunction />} />
+          <Route path="/Lenguado" element={<LenguadoFunction />} />
+          <Route path="/Tiraditos" element={<TiraditosFunction />} />
+          <Route path="/Arrocess" element={<ArrocesFunction />} />
+          <Route path="/Tacu Tacus" element={<TacuTacusFunction />} />
+          <Route path="/Aguadito" element={<AguaditoFunction />} />
+          <Route path="/Jaleas" element={<JaleasFunction />} />
+          <Route path="/Pescado Frito" element={<PescadoFritoFunction />} />
+          <Route path="/Platos Criollos" element={<PlatosCriollosFunction />} />
+          <Route path="/Pastas" element={<PastasFunction />} />
+          <Route path="/Chita" element={<ChitaFunction />} />
+          <Route path="/Bebidas" element={<BebidasFunction />} />
+          <Route path="/Reparto" element={<RepartoFunction />} />
+        </Routes>
+      </BrowserRouter>
+    </CarritoProvider>
   );
 }
 

@@ -1,78 +1,32 @@
 import { HeaderFunction } from "../../components/Header";
 import FooterFunction from "../../components/Footer"
 import TituloFunction from "../../components/Titulo"
-import PromocionesCards from "../../components/Promociones";
-import ceviche1 from "../../assets/Ceviches/ceviche1.jpg"
-import ceviche2 from "../../assets/Ceviches/ceviche2.jpg"
-import ceviche3 from "../../assets/Ceviches/ceviche3.jpg"
-import ceviche4 from "../../assets/Ceviches/ceviche4.jpg"
-import ceviche5 from "../../assets/Ceviches/ceviche5.jpg"
-import ceviche6 from "../../assets/Ceviches/ceviche6.jpg"
-import ceviche7 from "../../assets/Ceviches/ceviche7.jpg"
+import { PlatosFunction } from "../../components/PlatosCards"
+import { useState } from 'react'
 
 export default function CevicheFunction() {
+    const [allProducts, setAllProducts] = useState([]);
+    const [total, setTotal] = useState(0);
+    const [countProducts, setCountProducts] = useState(0);
     return (
         <>
-            <HeaderFunction />
-            <TituloFunction titulo2={"Entradas"} />
-            <div className="flex flex-col mx-4 md:grid md:grid-cols-3 md:gap-4 h-auto text-center">
-                <PromocionesCards
-                    amount={120}
-                    image={ceviche1}
-                    titulo={"Pack Familiar 4 personas"}
-                    descripcion={
-                        "ceviche de pescado + arroz con mariscos + jalea mixta + jarra de chicha."
-                    }
-                />
-                <PromocionesCards
-                    amount={120}
-                    image={ceviche2}
-                    titulo={"Pack Familiar 4 personas"}
-                    descripcion={
-                        "ceviche de pescado + arroz con mariscos + jalea mixta + jarra de chicha."
-                    }
-                />
-                <PromocionesCards
-                    amount={120}
-                    image={ceviche3}
-                    titulo={"Pack Familiar 4 personas"}
-                    descripcion={
-                        "ceviche de pescado + arroz con mariscos + jalea mixta + jarra de chicha."
-                    }
-                />
-                <PromocionesCards
-                    amount={120}
-                    image={ceviche4}
-                    titulo={"Pack Familiar 4 personas"}
-                    descripcion={
-                        "ceviche de pescado + arroz con mariscos + jalea mixta + jarra de chicha."
-                    }
-                />
-                <PromocionesCards
-                    amount={120}
-                    image={ceviche5}
-                    titulo={"Pack Familiar 4 personas"}
-                    descripcion={
-                        "ceviche de pescado + arroz con mariscos + jalea mixta + jarra de chicha."
-                    }
-                />
-                <PromocionesCards
-                    amount={120}
-                    image={ceviche6}
-                    titulo={"Pack Familiar 4 personas"}
-                    descripcion={
-                        "ceviche de pescado + arroz con mariscos + jalea mixta + jarra de chicha."
-                    }
-                />
-                <PromocionesCards
-                    amount={120}
-                    image={ceviche7}
-                    titulo={"Pack Familiar 4 personas"}
-                    descripcion={
-                        "ceviche de pescado + arroz con mariscos + jalea mixta + jarra de chicha."
-                    }
-                />
-            </div>
+            <HeaderFunction
+                allProducts={allProducts}
+                setAllProducts={setAllProducts}
+                total={total}
+                setTotal={setTotal}
+                countProducts={countProducts}
+                setCountProducts={setCountProducts} />
+            <TituloFunction titulo2={"Ceviches"} />
+            <PlatosFunction
+                allProducts={allProducts}
+                setAllProducts={setAllProducts}
+                total={total}
+                setTotal={setTotal}
+                countProducts={countProducts}
+                setCountProducts={setCountProducts}
+                productIds={[27, 28, 29, 30, 31, 32]}
+            />
             <FooterFunction />
         </>
     )

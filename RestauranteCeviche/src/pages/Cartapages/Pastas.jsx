@@ -1,43 +1,33 @@
 import { HeaderFunction } from "../../components/Header";
 import FooterFunction from "../../components/Footer"
 import TituloFunction from "../../components/Titulo"
-import PromocionesCards from "../../components/Promociones";
-import Pasta1 from "../../assets/Pastas/pasta1.jpg"
-import Pasta2 from "../../assets/Pastas/pasta2.jpg"
-import Pasta3 from "../../assets/Pastas/pasta3.jpg"
+import { PlatosFunction } from "../../components/PlatosCards"
+import { useState } from 'react'
 
 export default function PastasFunction() {
+    const [allProducts, setAllProducts] = useState([]);
+    const [total, setTotal] = useState(0);
+    const [countProducts, setCountProducts] = useState(0);
     return (
         <>
-            <HeaderFunction />
-            <TituloFunction titulo2={"Entradas"}/>
-            <div className="flex flex-col mx-4 md:grid md:grid-cols-3 md:gap-4 h-auto text-center">
-                <PromocionesCards
-                    amount={120}
-                    image={Pasta1}
-                    titulo={"Pack Familiar 4 personas"}
-                    descripcion={
-                        "ceviche de pescado + arroz con mariscos + jalea mixta + jarra de chicha."
-                    }
-                />
-                <PromocionesCards
-                    amount={120}
-                    image={Pasta2}
-                    titulo={"Pack Familiar 4 personas"}
-                    descripcion={
-                        "ceviche de pescado + arroz con mariscos + jalea mixta + jarra de chicha."
-                    }
-                />
-                <PromocionesCards
-                    amount={120}
-                    image={Pasta3}
-                    titulo={"Pack Familiar 4 personas"}
-                    descripcion={
-                        "ceviche de pescado + arroz con mariscos + jalea mixta + jarra de chicha."
-                    }
-                />
-            </div>
-            <FooterFunction/>
+            <HeaderFunction
+                allProducts={allProducts}
+                setAllProducts={setAllProducts}
+                total={total}
+                setTotal={setTotal}
+                countProducts={countProducts}
+                setCountProducts={setCountProducts} />
+            <TituloFunction titulo2={"Pastas"} />
+            <PlatosFunction
+                allProducts={allProducts}
+                setAllProducts={setAllProducts}
+                total={total}
+                setTotal={setTotal}
+                countProducts={countProducts}
+                setCountProducts={setCountProducts}
+                productIds={[65, 66, 67]}
+            />
+            <FooterFunction />
         </>
     )
 }
